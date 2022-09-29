@@ -1,0 +1,41 @@
+$white: #fff;
+
+.footer {
+    background-color: rgb(49, 40, 170);
+    height: 200px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+    padding: 40px 0;
+    color: $white;
+    .quotes-wrapper {
+        .quotes {
+            display: block;
+            font-size: 22px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .author {
+            display: block;
+            margin: 12px 0;
+        }
+    }
+
+    .socials-wrapper {
+        .social-list {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            .social-item {
+                margin-top: 20px;
+                .social-item__link {
+                    .icon {
+                        color: $white;
+                        font-size: 30px;
+                    }
+                }
+            }
+        }
+    }
+}
