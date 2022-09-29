@@ -1,0 +1,90 @@
+.login {
+    width: 100vw;
+    height: 100vh;
+    background-color: #3537cd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .login-box {
+        width: 1300px;
+        height: 800px;
+        background-color: #fff;
+        border-radius: 20px;
+        display: flex;
+
+
+        .auth {
+            flex: 1;
+            align-self: center;
+
+            .login-box__title {
+                display: block;
+                text-align: center;
+                position: relative;
+                top: -120px;
+                font-size: 40px;
+                font-weight: medium;
+                color: #3537cd;
+            }
+
+            .login-box__register {
+                display: block;
+                text-align: center;
+                position: relative;
+                top: 40px;
+
+                .login-box__register-link {
+                    text-decoration: none;
+                    color: #3537cd;
+                    font-weight: 600;
+                }
+            }
+
+            & > form {
+                padding: 0 40px;
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+
+                & > span {
+                    position: relative;
+                    text-align: right;
+                    margin: -6px 0px -10px;
+                    font-size: 15px;
+                    color: #3537cd;
+                    font-weight: 600;
+
+                }
+
+                & > input {
+                    height: 50px;
+                    border: 1px solid #3537cd;
+                    padding: 0 10px;
+                    border-radius: 8px;
+                }
+
+                .btn-login {
+                    background-color: #3537cd;
+                    height: 50px;
+                    width: 100%;
+                    align-self: center;
+                    color: #fff;
+                    margin-top: 10px;
+                    border-radius: 8px;
+                }
+            }
+        }
+
+        .img-wrapper {
+            flex: 2;
+            & > img {
+                height: 100%;
+                width: 100%;
+                border-top-right-radius: 20px;
+                border-bottom-right-radius: 20px;
+            }
+           
+        }
+    }
+}
