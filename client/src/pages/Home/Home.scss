@@ -1,0 +1,87 @@
+.home {
+    .new-post {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .new-post__img {
+            cursor: pointer;
+            flex: 1;
+            
+            & > img {
+                border-radius: 40px;
+            }
+        }
+
+        .post-info {
+            margin-left: 20px;
+            flex: 1;
+
+            .new-post__date {
+
+            }
+            .new-post__title {
+                cursor: pointer;
+                font-size: 40px;
+                font-weight: 800;
+                line-height: 46px;
+                padding: 20px 0;
+            }
+            .new-post__des {
+                
+            }
+            .new-post__author {
+                margin-top: 20px;
+                display: block;
+                background-color: #2b48ec;
+                padding: 6px 10px;
+                width: max-content;
+                color: #fff;
+                border-radius: 10px;
+            }
+        }
+    }
+
+    .post-list {
+        margin-top: 60px;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 40px;
+        justify-content: center;
+        .card-post {
+            max-width: calc(100%/3 - 27px);
+            .card-post__img {
+                border-radius: 20px;
+                cursor: pointer;
+            }
+    
+            .card-post__date {    
+                opacity: 0.8;
+                display: block;
+                margin-top: 6px;
+            }
+            .card-post__title {
+                cursor: pointer;
+                font-size: 22px;
+                font-weight: 700;
+                padding: 12px 0;
+            }
+            .card-post__des {
+                
+            }
+            .card-post__author {
+                margin-top: 7px;
+                display: block;
+                background-color: #2b48ec;
+                width: max-content;
+                padding: 5px 8px;
+                border-radius: 8px;
+                color: #fff;
+            }
+        }
+    }
+
+    
+}
+

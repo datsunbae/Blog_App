@@ -1,0 +1,90 @@
+.register {
+    width: 100vw;
+    height: 100vh;
+    background-color: #ff476e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .register-box {
+        width: 70%;
+        height: 76%;
+        background-color: #fff;
+        border-radius: 20px;
+        display: flex;
+
+
+        .auth {
+            flex: 1;
+            align-self: center;
+
+            .register-box__title {
+                display: block;
+                text-align: center;
+                font-size: 40px;
+                font-weight: medium;
+                color: #ff476e;
+                margin-bottom: 20px;
+            }
+
+            .register-box__register {
+                display: block;
+                text-align: center;
+                position: relative;
+                top: 40px;
+
+                .register-box__register-link {
+                    font-size: 15px;
+                    text-decoration: none;
+                    color: #ff476e;
+                    font-weight: 600;
+                }
+            }
+
+            & > form {
+                padding: 0 40px;
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+
+                & > span {
+                    position: relative;
+                    text-align: right;
+                    margin: -6px 0px -10px;
+                    font-size: 15px;
+                    color: #ff476e;
+                    font-weight: 600;
+
+                }
+
+                & > input {
+                    height: 50px;
+                    border: 1px solid #3537cd;
+                    padding: 0 10px;
+                    border-radius: 8px;
+                }
+
+                .btn-register {
+                    background-color: #ff476e;
+                    height: 50px;
+                    width: 100%;
+                    align-self: center;
+                    color: #fff;
+                    margin-top: 10px;
+                    border-radius: 8px;
+                }
+            }
+        }
+
+        .img-wrapper {
+            flex: 2;
+            & > img {
+                height: 100%;
+                width: 100%;
+                border-top-right-radius: 20px;
+                border-bottom-right-radius: 20px;
+            }
+           
+        }
+    }
+}

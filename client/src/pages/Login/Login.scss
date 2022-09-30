@@ -7,8 +7,8 @@
     align-items: center;
 
     .login-box {
-        width: 1300px;
-        height: 800px;
+        width: 70%;
+        height: 76%;
         background-color: #fff;
         border-radius: 20px;
         display: flex;
@@ -21,11 +21,10 @@
             .login-box__title {
                 display: block;
                 text-align: center;
-                position: relative;
-                top: -120px;
                 font-size: 40px;
                 font-weight: medium;
                 color: #3537cd;
+                margin-bottom: 60px;
             }
 
             .login-box__register {
@@ -35,6 +34,7 @@
                 top: 40px;
 
                 .login-box__register-link {
+                    font-size: 15px;
                     text-decoration: none;
                     color: #3537cd;
                     font-weight: 600;
