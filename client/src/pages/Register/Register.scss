@@ -1,7 +1,10 @@
+@import "../../common/scss/variables";
+
+
 .register {
     width: 100vw;
     height: 100vh;
-    background-color: #ff476e;
+    background-color: $pinkColor;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,7 +12,7 @@
     .register-box {
         width: 70%;
         height: 76%;
-        background-color: #fff;
+        background-color: $whiteColor;
         border-radius: 20px;
         display: flex;
 
@@ -23,7 +26,7 @@
                 text-align: center;
                 font-size: 40px;
                 font-weight: medium;
-                color: #ff476e;
+                color: $pinkColor;
                 margin-bottom: 20px;
             }
 
@@ -36,7 +39,7 @@
                 .register-box__register-link {
                     font-size: 15px;
                     text-decoration: none;
-                    color: #ff476e;
+                    color: $pinkColor;
                     font-weight: 600;
                 }
             }
@@ -52,24 +55,24 @@
                     text-align: right;
                     margin: -6px 0px -10px;
                     font-size: 15px;
-                    color: #ff476e;
+                    color: $pinkColor;
                     font-weight: 600;
 
                 }
 
                 & > input {
                     height: 50px;
-                    border: 1px solid #3537cd;
+                    border: 1px solid $primaryColor;
                     padding: 0 10px;
                     border-radius: 8px;
                 }
 
                 .btn-register {
-                    background-color: #ff476e;
+                    background-color: $pinkColor;
                     height: 50px;
                     width: 100%;
                     align-self: center;
-                    color: #fff;
+                    color: $whiteColor;
                     margin-top: 10px;
                     border-radius: 8px;
                 }

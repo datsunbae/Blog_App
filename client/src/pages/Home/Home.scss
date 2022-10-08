@@ -1,20 +1,23 @@
+@import "../../common/scss/variables";
+
 .home {
     .new-post {
         display: flex;
         justify-content: center;
         align-items: center;
-
+        column-gap: 80px;
         .new-post__img {
             cursor: pointer;
             flex: 1;
             
             & > img {
+                width: 100%;
+                height: 500px;
                 border-radius: 40px;
             }
         }
 
         .post-info {
-            margin-left: 20px;
             flex: 1;
 
             .new-post__date {
@@ -28,12 +31,12 @@
                 padding: 20px 0;
             }
             .new-post__des {
-                
+                font-size: 18px;
             }
             .new-post__author {
                 margin-top: 20px;
                 display: block;
-                background-color: #2b48ec;
+                background-color: $primaryColor;
                 padding: 6px 10px;
                 width: max-content;
                 color: #fff;
@@ -47,37 +50,42 @@
         display: flex;
         align-items: center;
         flex-wrap: wrap;
-        gap: 40px;
+        gap: 60px 37px;
         justify-content: center;
         .card-post {
-            max-width: calc(100%/3 - 27px);
+            max-width: calc(100%/4 - 28px) ;
             .card-post__img {
                 border-radius: 20px;
                 cursor: pointer;
+                height: 240px;
+                width: 100%;
             }
     
             .card-post__date {    
                 opacity: 0.8;
                 display: block;
                 margin-top: 6px;
+                font-size: 14px ;
+
             }
             .card-post__title {
                 cursor: pointer;
-                font-size: 22px;
+                font-size: 21px;
                 font-weight: 700;
                 padding: 12px 0;
             }
             .card-post__des {
-                
+                font-size: 14px ;
             }
             .card-post__author {
-                margin-top: 7px;
+                margin-top: 10px;
                 display: block;
-                background-color: #2b48ec;
+                background-color: $primaryColor;
                 width: max-content;
                 padding: 5px 8px;
                 border-radius: 8px;
                 color: #fff;
+                font-size: 14px;
             }
         }
     }
