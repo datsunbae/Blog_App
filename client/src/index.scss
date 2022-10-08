@@ -1,14 +1,22 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+    outline: none;
+}
 
 html {
     font-family: 'Noto Sans Mono', monospace;
 }
 
 .app {
-   
+    position: relative;
 }
 
+
 .container {
-    position: relative;
     margin: 0 200px;
     padding: 100px 0 240px;
+    min-height: 100vh;
 }
