@@ -36,6 +36,13 @@ const authController = {
 
         })
 
+    },
+
+    login: (req, res, next) => {
+        const q = 'SELECT * FROM user WHERE username = ?';
+        db.query(q, [req.body.username], (err, result) => {
+            console.log(result);
+        })
     }
 }
 
