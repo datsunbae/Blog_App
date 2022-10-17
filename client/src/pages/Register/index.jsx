@@ -1,19 +1,40 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import "./Register.scss";
+import axios from 'axios';
 
 const Register = () => {
+  const [inputs, setInputs] = useState({
+    username: '',
+    email: '',
+    password: '',
+  });
+
+  const handleChange = (e) => {
+    setInputs((prev) => ({...prev, [e.target.name]: e.target.value}));
+  }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try{
+      const res = await axios.post("/auth/register", inputs);
+    }catch(err) {
+
+    }
+  }
+
+  console.log(inputs)
+
   return (
     <div className="register">
       <div className="register-box">
         <div className="auth">
           <span className="register-box__title">SIGN UP</span>
           <form>
-          <input type="text" placeholder="Name"></input>
-            <input type="text" placeholder="Email or phone"></input>
-            <input type="password" placeholder="Password"></input>
-            <input type="password" placeholder="Repeat password"></input>
-            <button className="btn-register">Register</button>
+          <input type="text"  name="username" placeholder="User name" onChange={handleChange}></input>
+            <input type="text" name="email" placeholder="Email or phone" onChange={handleChange}></input>
+            <input type="password" name="password" placeholder="Password" onChange={handleChange}></input>
+            <button onClick={handleSubmit} className="btn-register">Register</button>
           </form>
           <span className="register-box__register">
            Already have an account? <Link to="/login" className="register-box__register-link">Sign in</Link>
