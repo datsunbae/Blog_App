@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import "./Register.scss";
 import axios from 'axios';
 
@@ -9,6 +9,8 @@ const Register = () => {
     email: '',
     password: '',
   });
+  const [error, setError] = useState('');
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setInputs((prev) => ({...prev, [e.target.name]: e.target.value}));
@@ -17,9 +19,10 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try{
-      const res = await axios.post("/auth/register", inputs);
+      await axios.post("/auth/register", inputs);
+      navigate("/login")
     }catch(err) {
-
+      setError(err.response.data);
     }
   }
 
@@ -36,6 +39,7 @@ const Register = () => {
             <input type="password" name="password" placeholder="Password" onChange={handleChange}></input>
             <button onClick={handleSubmit} className="btn-register">Register</button>
           </form>
+          {error && <span>{error}</span>}
           <span className="register-box__register">
            Already have an account? <Link to="/login" className="register-box__register-link">Sign in</Link>
           </span>

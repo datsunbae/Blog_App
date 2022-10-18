@@ -43,7 +43,7 @@ const authController = {
 
     login: (req, res, next) => {
         try {
-            const q = 'SELECT * FROM user WHERE username = ?';
+            const q = 'SELECT * FROM user WHERE username = ?'   ;
             db.query(q, [req.body.username], async (err, result) => {
                 if(err) {
                     return res.status(500).json(err);
