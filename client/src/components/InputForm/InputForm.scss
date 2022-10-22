@@ -1,0 +1,25 @@
+@import "../../common/scss/variables";
+
+.input-form {
+    & > input {
+        height: 50px;
+        border: 1px solid $primaryColor;
+        padding: 0 10px;
+        border-radius: 8px;
+        width: 100%;
+    }
+    
+    .input-from__err-msg {
+        margin: 5px 0 -5px;
+        font-size: 13px;
+        color: $red;
+        font-weight: 400;    
+        display: none;
+    }
+    
+    input:invalid[focused="true"] ~ .input-from__err-msg{
+        display: block;
+    }
+}
+
+

@@ -11,7 +11,7 @@
 
     .login-box {
         width: 70%;
-        height: 76%;
+        height: 86%;
         background-color: $whiteColor;
         border-radius: 20px;
         display: flex;
@@ -50,23 +50,6 @@
                 flex-direction: column;
                 gap: 20px;
 
-                & > span {
-                    position: relative;
-                    text-align: right;
-                    margin: -6px 0px -10px;
-                    font-size: 15px;
-                    color: $primaryColor;
-                    font-weight: 600;
-
-                }
-
-                & > input {
-                    height: 50px;
-                    border: 1px solid $primaryColor;
-                    padding: 0 10px;
-                    border-radius: 8px;
-                }
-
                 .btn-login {
                     background-color: $primaryColor;
                     height: 50px;
@@ -75,6 +58,12 @@
                     color: #fff;
                     margin-top: 10px;
                     border-radius: 8px;
+                    cursor: pointer;
+                }
+
+                .login-box_forgot-pw {              
+                    text-decoration: none;
+                    text-align: right;
                 }
             }
         }
