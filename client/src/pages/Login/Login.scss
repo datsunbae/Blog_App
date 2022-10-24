@@ -66,6 +66,13 @@
                     text-align: right;
                 }
             }
+
+            .auth__err-msg {
+                display: block;
+                color: $red;
+                text-align: center;
+                margin-top: 10px;
+            }
         }
 
         .img-wrapper {

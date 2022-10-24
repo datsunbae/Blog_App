@@ -60,10 +60,13 @@ const Register = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+    try{
+      await axios.post("/auth/register", values);
+      navigate("/login")
+    }catch(err) {
+      setError(err.response.data);
+    }
   }
-
-  console.log(values)
 
   return (
     <div className="register">
@@ -76,7 +79,7 @@ const Register = () => {
             ))}
             <button className="btn-register">Register</button>
           </form>
-          {error && <span>{error}</span>}
+          {error && <span className="auth__err-msg">{error}</span>}
           <span className="register-box__register">
            Already have an account? <Link to="/login" className="register-box__register-link">Sign in</Link>
           </span>

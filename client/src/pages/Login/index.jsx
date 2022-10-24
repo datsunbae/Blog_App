@@ -1,6 +1,7 @@
+import axios from 'axios';
 import React from 'react';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import InputForm from '../../components/InputForm';
 import "./Login.scss";
 
@@ -10,16 +11,12 @@ const Login = () => {
     password: "",
   });
 
-  console.log(value);
-
   const inputs = [
     {
       id: 1,
       name: "username",
       type: "text",
       placeholder: "Username",
-      errorMessage: "Username should be 3-16 characters and shouldn't include any special character!",
-      pattern: "[a-z0-9]+@[a-z]+\\.[a-z]{2,3}",
       required: true,
     },
     {
@@ -27,19 +24,27 @@ const Login = () => {
       name: "password",
       type: "password",
       placeholder: "Password",
-      errorMessage: "Password should be 8-20 characters and include at least 1 letter, 1 number and 1 special character!",
-      pattern: "^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$",
       required: true,
     }
   ];
 
-
+  const [error, setError] = useState();
+  const navigate = useNavigate();
+ 
   const onChange = (e) => {
     setValue({...value, [e.target.name]: e.target.value})
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    
+    try{
+      await axios.post("/auth/login", value);
+      navigate("/")
+    }
+    catch(err) {
+      setError(err.response.data);
+    }
   }
 
   return (
@@ -54,6 +59,7 @@ const Login = () => {
             <Link to="/" className="login-box_forgot-pw">Forgot password?</Link>
             <button className="btn-login">Login</button>
           </form>
+          {error && <span className="auth__err-msg">{error}</span>}
           <span className="login-box__register">
             Don't have an account? <Link to="/register" className="login-box__register-link">Sign up</Link>
           </span>

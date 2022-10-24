@@ -6,17 +6,15 @@ const InputForm = (props) => {
   const [focused, setFocused] = useState(false);
   
   const handleBlur = (e) => {
-    console.log(inputProps.value)
-    const inputPassword = document.querySelector('input[name="password"');
-    if(inputPassword.value === "") {
+    if(e.target.getAttribute("name") === "confirmPassword"){
       console.log(123)
-      const inputConfirmPassword = document.querySelector('input[name="confirmPassword"');
-      inputConfirmPassword.setAttribute("focused", false);
+      const inputPassword = document.querySelector('input[name="password"');
+      if(inputPassword.value === "") {
+        const inputConfirmPassword = document.querySelector('input[name="confirmPassword"');
+        inputConfirmPassword.setAttribute("focused", false);
+      }
     }
-    console.log(inputPassword)
     setFocused(true);
-
-    
   }
   return (
     <div className="input-form">
