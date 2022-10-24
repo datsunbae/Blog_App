@@ -19,7 +19,7 @@ const Login = () => {
       type: "text",
       placeholder: "Username",
       errorMessage: "Username should be 3-16 characters and shouldn't include any special character!",
-      pattern: "^[A-Za-z0-9]{3,16}$",
+      pattern: "[a-z0-9]+@[a-z]+\\.[a-z]{2,3}",
       required: true,
     },
     {

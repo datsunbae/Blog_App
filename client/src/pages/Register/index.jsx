@@ -2,42 +2,79 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import "./Register.scss";
 import axios from 'axios';
+import InputForm from '../../components/InputForm';
 
 const Register = () => {
-  const [inputs, setInputs] = useState({
-    username: '',
-    email: '',
-    password: '',
+  const [values, setValues] = useState({
+    username: "",
+    email: "",
+    password: "",
+    repeatPassword: "",
   });
+  
+  const inputs = [
+    {
+      id: 1,
+      name: "email",
+      type: "text",
+      placeholder: "Email",
+      errorMessage: "It should be a valid email address!",
+      pattern: "[a-z0-9]+@[a-z]+\\.[a-z]{2,3}",
+      required: true,
+    },
+    {
+      id: 2,
+      name: "username",
+      type: "text",
+      placeholder: "Username",
+      errorMessage: "Username should be 3-16 characters and shouldn't include any special character!",
+      pattern: "^[A-Za-z0-9]{3,16}$",
+      required: true,
+    },
+    {
+      id: 3,
+      name: "password",
+      type: "password",
+      placeholder: "Password",
+      errorMessage: "Password should be 8-20 characters and include at least 1 letter, 1 number and 1 special character!",
+      pattern: "^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$",
+      required: true,
+    },
+    {
+      id: 4,
+      name: "confirmPassword",
+      type: "password",
+      placeholder: "Confirm Password",
+      errorMessage: "Password don't match!",
+      pattern: values.password,
+      required: true,
+    }
+  ];
+
   const [error, setError] = useState('');
   const navigate = useNavigate();
 
   const handleChange = (e) => {
-    setInputs((prev) => ({...prev, [e.target.name]: e.target.value}));
+    setValues({...values, [e.target.name]: e.target.value});
   }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    try{
-      await axios.post("/auth/register", inputs);
-      navigate("/login")
-    }catch(err) {
-      setError(err.response.data);
-    }
+    
   }
 
-  console.log(inputs)
+  console.log(values)
 
   return (
     <div className="register">
       <div className="register-box">
         <div className="auth">
           <span className="register-box__title">SIGN UP</span>
-          <form>
-          <input type="text"  name="username" placeholder="User name" onChange={handleChange}></input>
-            <input type="text" name="email" placeholder="Email or phone" onChange={handleChange}></input>
-            <input type="password" name="password" placeholder="Password" onChange={handleChange}></input>
-            <button onClick={handleSubmit} className="btn-register">Register</button>
+          <form onSubmit={handleSubmit}>
+            {inputs.map(input => (
+              <InputForm {...input} onChange={handleChange} value={values[input.name]}></InputForm>
+            ))}
+            <button className="btn-register">Register</button>
           </form>
           {error && <span>{error}</span>}
           <span className="register-box__register">
