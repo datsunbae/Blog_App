@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import axios from "axios";
 import moment from "moment";
 import "./Post.scss";
+import RecommendPost from "../../components/RecommendPost";
 
 const Post = () => {
   const [post, setPost] = useState();
@@ -48,71 +49,7 @@ const Post = () => {
           </p>
         </div>
       </div>
-      <div className="other-post">
-        <div className="other-post__title">Other posts you may like</div>
-        <ul className="other-post__list">
-          <li className="other-post__item">
-            <img
-              src="https://cdn.dribbble.com/users/3562886/screenshots/14761289/media/7ef51c4dec10d815ea68c3c95f2b88c8.png?compress=1&resize=1000x750&vertical=top"
-              alt=""
-            />
-            <h3 className="other-post__item-title">
-              NORTH KOREA FIRES BALLISTIC MISSILE OVER JAPAN
-            </h3>
-            <button className="other-post__btn">Read More</button>
-          </li>
-          <li className="other-post__item">
-            <img
-              src="https://cdn.dribbble.com/users/3562886/screenshots/14761289/media/7ef51c4dec10d815ea68c3c95f2b88c8.png?compress=1&resize=1000x750&vertical=top"
-              alt=""
-            />
-            <h3 className="other-post__item-title">
-              NORTH KOREA FIRES BALLISTIC MISSILE OVER JAPAN
-            </h3>
-            <button className="other-post__btn">Read More</button>
-          </li>
-          <li className="other-post__item">
-            <img
-              src="https://cdn.dribbble.com/users/3562886/screenshots/14761289/media/7ef51c4dec10d815ea68c3c95f2b88c8.png?compress=1&resize=1000x750&vertical=top"
-              alt=""
-            />
-            <h3 className="other-post__item-title">
-              NORTH KOREA FIRES BALLISTIC MISSILE OVER JAPAN
-            </h3>
-            <button className="other-post__btn">Read More</button>
-          </li>
-          <li className="other-post__item">
-            <img
-              src="https://cdn.dribbble.com/users/3562886/screenshots/14761289/media/7ef51c4dec10d815ea68c3c95f2b88c8.png?compress=1&resize=1000x750&vertical=top"
-              alt=""
-            />
-            <h3 className="other-post__item-title">
-              NORTH KOREA FIRES BALLISTIC MISSILE OVER JAPAN
-            </h3>
-            <button className="other-post__btn">Read More</button>
-          </li>
-          <li className="other-post__item">
-            <img
-              src="https://cdn.dribbble.com/users/3562886/screenshots/14761289/media/7ef51c4dec10d815ea68c3c95f2b88c8.png?compress=1&resize=1000x750&vertical=top"
-              alt=""
-            />
-            <h3 className="other-post__item-title">
-              NORTH KOREA FIRES BALLISTIC MISSILE OVER JAPAN
-            </h3>
-            <button className="other-post__btn">Read More</button>
-          </li>
-          <li className="other-post__item">
-            <img
-              src="https://cdn.dribbble.com/users/3562886/screenshots/14761289/media/7ef51c4dec10d815ea68c3c95f2b88c8.png?compress=1&resize=1000x750&vertical=top"
-              alt=""
-            />
-            <h3 className="other-post__item-title">
-              NORTH KOREA FIRES BALLISTIC MISSILE OVER JAPAN
-            </h3>
-            <button className="other-post__btn">Read More</button>
-          </li>
-        </ul>
-      </div>
+      <RecommendPost cat={post?.cat} postID={post?.id}/>
     </div>
   );
 };
