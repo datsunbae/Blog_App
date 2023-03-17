@@ -15,18 +15,28 @@ const Navbar = () => {
       <div className="navbar-wrapper-navigate">
         <ul className="navbar-list">
           <li className="navbar-list__item">
-            <Link to="/" className="navbar-list__item-link">
-              Blog
+            <Link to="/?cat=technology" className="navbar-list__item-link">
+              Technology
             </Link>
           </li>
           <li className="navbar-list__item">
-            <Link to="/about" className="navbar-list__item-link">
-              About
+            <Link to="/?cat=design" className="navbar-list__item-link">
+              Design
             </Link>
           </li>
           <li className="navbar-list__item">
-            <Link to="/contact" className="navbar-list__item-link">
-              Contact
+            <Link to="/?cat=food" className="navbar-list__item-link">
+              Food
+            </Link>
+          </li>
+          <li className="navbar-list__item">
+            <Link to="/?cat=sports" className="navbar-list__item-link">
+              Sports
+            </Link>
+          </li>
+          <li className="navbar-list__item">
+            <Link to="/?cat=travel" className="navbar-list__item-link">
+              Travel
             </Link>
           </li>
           <li className="navbar-list__item">
