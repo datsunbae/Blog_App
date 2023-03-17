@@ -62,7 +62,7 @@ const authController = {
                     const {password, ...other} = user;
                     const token = authController.generateAccessToken(other);
                     res.cookie('access_token', token, {
-                        httpOnly: true,
+                        httpOnly: true, 
                         sameSite: 'strict',
                         scure: false
                     }).status(200).json(other);
@@ -75,6 +75,16 @@ const authController = {
         }
 
 
+    },
+    logout: (req, res, next) => {
+        try{
+            res.clearCookie("access_token", {
+                sameSite: 'none',
+                scure: true
+            }).status(200).json("User has been logged out")
+        }catch(err){
+            return res.status(500).json(err);
+        }
     },
     generateAccessToken: (user) => {
         return jwt.sign({

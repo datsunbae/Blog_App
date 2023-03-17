@@ -7,7 +7,6 @@ const InputForm = (props) => {
   
   const handleBlur = (e) => {
     if(e.target.getAttribute("name") === "confirmPassword"){
-      console.log(123)
       const inputPassword = document.querySelector('input[name="password"');
       if(inputPassword.value === "") {
         const inputConfirmPassword = document.querySelector('input[name="confirmPassword"');
