@@ -28,6 +28,13 @@
 
                 .post-detail__author {
                     margin-left: 16px;
+                    
+                     &-top {
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+
+                     }
 
                     .post-detail__author-name {
                         font-size: 16px;

@@ -26,6 +26,17 @@ const postController = {
       return res.status(200).json(results[0]);
     });
   },
+  getPostLatest: (req, res) => {
+
+    const query = "SELECT p.id, `username`, `title`, `desc`, p.img, `date` FROM posts p JOIN user u ON p.uid = u.id ORDER BY p.id DESC LIMIT 1";
+
+    db.query(query, (err, results) => {
+      if(err){
+        return res.status(500).json(err);
+      }
+      return res.status(200).json(results[0]);
+    })
+  },
   addPost: (req, res) => {
     res.json("post controller");
   },
