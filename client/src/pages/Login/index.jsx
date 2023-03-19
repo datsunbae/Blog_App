@@ -42,7 +42,7 @@ const Login = () => {
     e.preventDefault();
     
     try{
-      login(value);
+      await login(value);
       navigate("/");
     }
     catch(err) {
