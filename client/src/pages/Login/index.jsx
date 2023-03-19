@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import InputForm from '../../components/InputForm';
@@ -49,6 +49,15 @@ const Login = () => {
       setError(err.response.data);
     }
   }
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const refreshToken = await axios.post("/auth/refreshToken");
+      console.log(refreshToken.data);
+    }
+
+    fetchData();
+  }, [])
 
   return (
     <div className="login">

@@ -15,6 +15,7 @@ const Home = () => {
     const fetchData = async () => {
       try {
         const postLatest = await axios.get("/posts/latest");
+        
         const res = await axios.get(`/posts${cat}`);
         setPosts(res.data);
         setPostLatest(postLatest.data);

@@ -16,8 +16,6 @@ const Post = () => {
   const { currentUser } = useContext(AuthContext);
   const navigate = useNavigate();
 
-
-
   const handleEdit = () => {};
 
   const onDialog = async (choose) => {
